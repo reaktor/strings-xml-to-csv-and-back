@@ -1,0 +1,11 @@
+key,en,fi,sv
+app_name,My Magnificient App,Mun appis,Min App
+basic,Basic,Perus,elementär
+bold,"<annotation font=""bold"">this is bold</annotation> and this is not, then again <annotation font=""bold"">this is</annotation>","<annotation font=""bold"">lihavoitua</annotation> tavallista <annotation font=""bold"">lihavoitua</annotation>","<annotation font=""bold"">this is bold</annotation> and this is not, then again <annotation font=""bold"">this is</annotation>"
+english_in_native,English,English,English
+missing_translation_from_both_others,Missing translation in both others,,
+missing_translation_from_one_other,Missing translation in one other,Tämä puuttuu seuraavasta,
+placeholder_string,placeholder to follow %1$d,paikanpitäjä %1$d,platshållare för att följa %1$d
+plural__number_of_items__one,%1$d item,%1$d asia,%1$d artikel
+plural__number_of_items__other,%1$d items,%1$d asiaa,%1$d artiklar
+plural__number_of_items__zero,no items,ei asioita,inga artiklar

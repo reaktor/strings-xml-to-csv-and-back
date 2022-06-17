@@ -1,0 +1,12 @@
+<resources>
+  <string name="app_name">Min App</string>
+  <string name="basic">elementär</string>
+  <string translatable="false" name="english_in_native">English</string>
+  <string name="placeholder_string">platshållare för att följa %1$d</string>
+  <plurals name="number_of_items">
+    <item quantity="one">%1$d artikel</item>
+    <item quantity="zero">inga artiklar</item>
+    <item quantity="other">%1$d artiklar</item>
+  </plurals>
+  <string name="bold"><annotation font="bold">this is bold</annotation> and this is not, then again <annotation font="bold">this is</annotation></string>
+</resources>

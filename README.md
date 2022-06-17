@@ -22,3 +22,11 @@ positional arguments:
 optional arguments:
   -h, --help  show this help message and exit
 ```
+
+## Samples
+
+See [expected.csv](tests/xml-to-csv/expected.csv) for a sample output of `strings.xml` files in [tests/xml-to-csv/in].
+
+## Tests
+
+Run [./run\_tests.sh](./run_tests.sh).
