@@ -1,14 +1,13 @@
 <resources>
   <string name="app_name">Mun appis</string>
   <string name="basic">Perus</string>
-  <string translatable="false" name="english_in_native">English</string>
+  <string name="bold">tavallista<annotation font="bold">lihavoitua</annotation> tavallista <annotation font="bold">lihavoitua</annotation>tavallista</string>
+  <string name="english_in_native">English</string>
+  <string name="missing_translation_from_one_other">Tämä puuttuu seuraavasta</string>
   <string name="placeholder_string">paikanpitäjä %1$d</string>
   <plurals name="number_of_items">
     <item quantity="one">%1$d asia</item>
-    <item quantity="zero">ei asioita</item>
     <item quantity="other">%1$d asiaa</item>
+    <item quantity="zero">ei asioita</item>
   </plurals>
-  <string name="missing_translation_from_one_other">Tämä puuttuu seuraavasta</string>
-    <string name="bold"><annotation font="bold">lihavoitua</annotation> tavallista <annotation font="bold">lihavoitua</annotation></string>
-
 </resources>

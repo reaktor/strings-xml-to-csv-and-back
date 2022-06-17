@@ -27,6 +27,8 @@ def to_csv(out_file: Path, res_path: Path):
                 string_key = element.attrib['name']
                 if len(element) > 0:
                     concatenated = ""
+                    if element.text:
+                        concatenated += element.text
                     for e in element:
                         concatenated += ElementTree.tostring(e, encoding='unicode', method='xml')
                     keys_to_translations[string_key][lang] = concatenated
