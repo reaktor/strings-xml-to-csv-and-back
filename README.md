@@ -25,7 +25,7 @@ optional arguments:
 
 ## Samples
 
-See [expected.csv](tests/xml-to-csv/expected.csv) for a sample output of `strings.xml` files in [tests/xml-to-csv/in].
+See [expected.csv](tests/xml-to-csv/expected.csv) for a sample output of `strings.xml` files in [tests/xml-to-csv/in](tests/xml-to-csv/in).
 
 ## Tests
 
