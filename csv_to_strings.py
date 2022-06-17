@@ -22,13 +22,13 @@ def to_strings(csv_path: Path, res_path: Path):
             raise Exception('The csv file does not have key as the first element of the first row')
         known_langs = reader.fieldnames[1:]
         for row in reader:
+            row_key = row['key']
+            plural_match = re.match(r'plural__(?P<plural_name>.*)__(?P<plural_quantity>.*)', row_key)
             for lang in known_langs:
-                row_key = row['key']
-                match = re.match(r'plural__(?P<plural_name>.*)__(?P<plural_quantity>.*)', row_key)
                 contents_in_lang = row[lang]
-                if match:
-                    plural_name = match.group('plural_name')
-                    plural_quantities = match.group('plural_quantity')
+                if plural_match:
+                    plural_name = plural_match.group('plural_name')
+                    plural_quantities = plural_match.group('plural_quantity')
                     plurals[lang][plural_name][plural_quantities] = contents_in_lang
                 elif contents_in_lang:
                     elem = f"""<string name="{row_key}">{contents_in_lang}</string>"""
