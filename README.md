@@ -23,6 +23,19 @@ optional arguments:
   -h, --help  show this help message and exit
 ```
 
+```
+usage: csv_to_strings.py [-h] csv_path res_path
+
+Convert a previously exported csv file back to strings.xml files
+
+positional arguments:
+  csv_path    input csv file
+  res_path    path to target res -directory, For example "~/AndroidStudioProjects/MyApp/app/src/main/res"
+
+optional arguments:
+  -h, --help  show this help message and exit
+```
+
 ## Samples
 
 See [expected.csv](tests/xml-to-csv/expected.csv) for a sample output of `strings.xml` files in [tests/xml-to-csv/in](tests/xml-to-csv/in).
