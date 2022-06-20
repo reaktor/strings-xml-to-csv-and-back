@@ -31,8 +31,12 @@ def to_strings(csv_path: Path, res_path: Path):
                     plural_quantities = plural_match.group('plural_quantity')
                     plurals[lang][plural_name][plural_quantities] = contents_in_lang
                 elif contents_in_lang:
-                    elem = f"""<string name="{row_key}">{contents_in_lang}</string>"""
-                    basic_strings[lang].append(ElementTree.fromstring(elem))
+                    elem = f"""<string name="{row_key}">{contents_in_lang.replace('&', '&amp;')}</string>"""
+                    try:
+                        basic_strings[lang].append(ElementTree.fromstring(elem))
+                    except Exception as e:
+                        print(f"Could not parse: {elem}")
+                        raise e
 
     plurals_elems: Dict[str, List[ElementTree]] = defaultdict(list)
     for lang in known_langs:
