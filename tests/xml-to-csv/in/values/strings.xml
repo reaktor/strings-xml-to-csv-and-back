@@ -1,10 +1,13 @@
 <resources>
-  <string name="app_name">My Magnificient App</string>
   <string name="ampersanded">Something &amp; other</string>
+  <string name="app_name">My Magnificient App</string>
   <string name="basic">Basic</string>
   <string name="bold">Not bold<annotation font="bold">this is bold</annotation> and this is not, then again <annotation font="bold">this is</annotation> this is not</string>
-  <string name="bold_as_first"><annotation font="bold">this is bold</annotation> and this is not, then again <annotation font="bold">this is</annotation> this is not</string>
-  <string name="bold_as_last"><annotation font="bold">this is bold</annotation> and this is not, then again <annotation font="bold">bold</annotation></string>
+  <string name="bold_as_first">
+    <annotation font="bold">this is bold</annotation> and this is not, then again <annotation font="bold">this is</annotation> this is not</string>
+  <string name="bold_as_last">
+    <annotation font="bold">this is bold</annotation> and this is not, then again <annotation font="bold">bold</annotation>
+  </string>
   <string name="english_in_native">English</string>
   <string name="missing_translation_from_both_others">Missing translation in both others</string>
   <string name="missing_translation_from_one_other">Missing translation in one other</string>
