@@ -1,4 +1,5 @@
 key,en,fi,sv
+ampersanded,Something & other,,
 app_name,My Magnificient App,Mun appis,Min App
 basic,Basic,Perus,elementär
 bold,"Not bold<annotation font=""bold"">this is bold</annotation> and this is not, then again <annotation font=""bold"">this is</annotation> this is not","tavallista<annotation font=""bold"">lihavoitua</annotation> tavallista <annotation font=""bold"">lihavoitua</annotation>tavallista","notbold<annotation font=""bold"">this is bold</annotation> and this is not, then again <annotation font=""bold"">this is</annotation>notbold"

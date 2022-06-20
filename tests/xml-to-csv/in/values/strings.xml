@@ -1,5 +1,6 @@
 <resources>
   <string name="app_name">My Magnificient App</string>
+  <string name="ampersanded">Something &amp; other</string>
   <string name="basic">Basic</string>
   <string name="bold">Not bold<annotation font="bold">this is bold</annotation> and this is not, then again <annotation font="bold">this is</annotation> this is not</string>
   <string name="bold_as_first"><annotation font="bold">this is bold</annotation> and this is not, then again <annotation font="bold">this is</annotation> this is not</string>
