@@ -59,6 +59,8 @@ def to_strings(csv_path: Path, res_path: Path):
         tree = ElementTree.ElementTree(root)
         ElementTree.indent(tree)
         tree.write(target_file, encoding='utf-8')
+        with open(target_file, mode='a') as open_target:
+            open_target.write('\n')
         print(f'Wrote {target_file}')
 
 
