@@ -31,9 +31,9 @@ def to_csv(out_file: Path, res_path: Path):
                         concatenated += element.text
                     for e in element:
                         concatenated += ElementTree.tostring(e, encoding='unicode', method='xml')
-                    keys_to_translations[string_key][lang] = concatenated
+                    keys_to_translations[string_key][lang] = concatenated.strip()
                 else:
-                    keys_to_translations[string_key][lang] = element.text
+                    keys_to_translations[string_key][lang] = element.text.strip()
             elif type_tag == 'plurals':
                 plural_name = element.attrib['name']
                 for plural_variation in element:
