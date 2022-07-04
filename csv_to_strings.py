@@ -12,20 +12,25 @@ from xml.etree import ElementTree
 def to_strings(csv_path: Path, res_path: Path):
     print(f"Going to convert csv from {csv_path} to {res_path}")
 
-    known_langs: List[str] = []
+    known_langs_with_indices: Dict[str, int] = {}
     basic_strings: Dict[str, List[ElementTree]] = defaultdict(list)
     plurals: Dict[str, Dict[str, Dict[str, str]]] = defaultdict(lambda: defaultdict(dict))
 
     with open(csv_path, 'r', newline='') as csvfile:
-        reader = csv.DictReader(csvfile)
-        if reader.fieldnames[0] != 'key':
+        reader = csv.reader(csvfile)
+        header_row = next(reader)
+        if header_row[0] != 'key':
             raise Exception('The csv file does not have key as the first element of the first row')
-        known_langs = reader.fieldnames[1:]
+        for i, lang in enumerate(header_row[1:]):
+            if not lang:
+                break
+            known_langs_with_indices[lang] = i + 1
+        print(f'Found languages: {", ".join(known_langs_with_indices.keys())}')
         for row in reader:
-            row_key = row['key']
+            row_key = row[0]
             plural_match = re.match(r'plural__(?P<plural_name>.*)__(?P<plural_quantity>.*)', row_key)
-            for lang in known_langs:
-                contents_in_lang = row[lang]
+            for lang, index in known_langs_with_indices.items():
+                contents_in_lang = row[index]
                 if plural_match:
                     plural_name = plural_match.group('plural_name')
                     plural_quantities = plural_match.group('plural_quantity')
@@ -39,7 +44,7 @@ def to_strings(csv_path: Path, res_path: Path):
                         raise e
 
     plurals_elems: Dict[str, List[ElementTree]] = defaultdict(list)
-    for lang in known_langs:
+    for lang in known_langs_with_indices.keys():
         plurals_in_lang = plurals[lang]
         for (plural_key, plural_quantities) in plurals_in_lang.items():
             plurals_elem = ElementTree.Element('plurals')
@@ -49,7 +54,7 @@ def to_strings(csv_path: Path, res_path: Path):
                 plurals_elem.append(ElementTree.fromstring(elem))
             plurals_elems[lang].append(plurals_elem)
 
-    for lang in known_langs:
+    for lang in known_langs_with_indices.keys():
         root = ElementTree.Element('resources')
         root.extend(basic_strings[lang])
         root.extend(plurals_elems[lang])
